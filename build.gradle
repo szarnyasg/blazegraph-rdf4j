@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	def rdf4jVersion = '2.0'
+	compile group: 'com.blazegraph', name: 'bigdata-core', version: '2.1.2'
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-model', version: rdf4jVersion
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-repository-sail', version: rdf4jVersion
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-runtime', version: rdf4jVersion
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-sail-memory', version: rdf4jVersion
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-repository-contextaware', version: rdf4jVersion
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-rio-rdfxml', version: rdf4jVersion
+	compile group: 'org.eclipse.rdf4j', name: 'rdf4j-rio-turtle', version: rdf4jVersion
+}
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+	maven { url "https://repo.eclipse.org/content/groups/acceleo" }
+	maven { url "https://repo.eclipse.org/content/groups/viatra2" }
+	maven { url "http://www.systap.com/maven/releases" }
+	maven { url "http://docs.inf.mit.bme.hu/trainbenchmark-deps" }
+	maven { url "https://raw.github.com/neo4j-contrib/m2/master/releases" }
+}
